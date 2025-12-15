@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bw7ub8k7lmyd7"]
+[gd_scene load_steps=11 format=4 uid="uid://bw7ub8k7lmyd7"]
 
 [ext_resource type="TileSet" uid="uid://dg817vgkjfhd0" path="res://platformer_tp3/assets/sprites/Free/Terrain/terain.tres" id="1_ch1hp"]
 [ext_resource type="PackedScene" uid="uid://bbsurxxwbgpcq" path="res://platformer_tp3/assets/scenes/character_body_2d.tscn" id="2_l2ev2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b8uqhtxmig1qg" path="res://platformer_tp3/assets/script/pause_menu.gd" id="8_8mvax"]
 [ext_resource type="FontFile" uid="uid://o66t4b6wi1vo" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="8_c2d0i"]
 [ext_resource type="Script" uid="uid://7o6i42ywuetw" path="res://platformer_tp3/assets/script/energy_counter.gd" id="8_s3vsq"]
+[ext_resource type="FontFile" uid="uid://b67k3fj5owlmk" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelOutlineRegular-MVzKp.ttf" id="9_x2wew"]
 
 [node name="AreaTemplate" type="Node2D"]
 
@@ -94,23 +95,27 @@ theme_override_constants/separation = 3
 
 [node name="PausedLabel" type="Label" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("8_c2d0i")
+theme_override_font_sizes/font_size = 40
 text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="resume" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("9_x2wew")
 theme_override_font_sizes/font_size = 10
 text = "RESUME"
 
 [node name="restart" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("9_x2wew")
 theme_override_font_sizes/font_size = 10
 text = "RESTART"
 
 [node name="quit" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("9_x2wew")
 theme_override_font_sizes/font_size = 10
 text = "QUIT
 "
