@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://db538g10e5vbg"]
+
+[ext_resource type="Script" uid="uid://n4haemn748fa" path="res://platformer_tp3/assets/script/canvas_layer.gd" id="1_dolpd"]
+[ext_resource type="Texture2D" uid="uid://cepvqi3iqgbyl" path="res://platformer_tp3/assets/sprites/Free/Background/Purple.png" id="2_3fpbg"]
+[ext_resource type="FontFile" uid="uid://o66t4b6wi1vo" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="2_c6nyt"]
+[ext_resource type="FontFile" uid="uid://b67k3fj5owlmk" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelOutlineRegular-MVzKp.ttf" id="3_3fpbg"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_dolpd")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -46.5
+offset_right = 56.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Purple" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(278, 73.5)
+scale = Vector2(39.8359, 39.8359)
+texture = ExtResource("2_3fpbg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Anannas eater" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_c6nyt")
+theme_override_font_sizes/font_size = 40
+text = "Pineapple Runner"
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3fpbg")
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3fpbg")
+theme_override_font_sizes/font_size = 25
+text = "Quit"

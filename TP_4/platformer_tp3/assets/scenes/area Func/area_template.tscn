@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=4 uid="uid://bw7ub8k7lmyd7"]
+
+[ext_resource type="TileSet" uid="uid://dg817vgkjfhd0" path="res://platformer_tp3/assets/sprites/Free/Terrain/terain.tres" id="1_ch1hp"]
+[ext_resource type="PackedScene" uid="uid://bbsurxxwbgpcq" path="res://platformer_tp3/assets/scenes/character_body_2d.tscn" id="2_l2ev2"]
+[ext_resource type="PackedScene" uid="uid://dydy5q56fn4qf" path="res://platformer_tp3/assets/scenes/area Func/area_exit.tscn" id="6_ehlof"]
+[ext_resource type="PackedScene" uid="uid://vlc7lyei8u2j" path="res://platformer_tp3/assets/scenes/saw.tscn" id="6_jwu2g"]
+[ext_resource type="PackedScene" uid="uid://cw0mylbcshglb" path="res://platformer_tp3/assets/scenes/spikes.tscn" id="7_syist"]
+[ext_resource type="PackedScene" uid="uid://cexra881dd400" path="res://platformer_tp3/assets/scenes/energy_cell.tscn" id="7_x0c84"]
+[ext_resource type="Script" uid="uid://b8uqhtxmig1qg" path="res://platformer_tp3/assets/script/pause_menu.gd" id="8_8mvax"]
+[ext_resource type="Script" uid="uid://7o6i42ywuetw" path="res://platformer_tp3/assets/script/energy_counter.gd" id="8_s3vsq"]
+
+[node name="AreaTemplate" type="Node2D"]
+
+[node name="AreaExit" parent="." instance=ExtResource("6_ehlof")]
+z_index = 1
+position = Vector2(532, -44)
+
+[node name="traps" type="Node2D" parent="."]
+
+[node name="saw2" parent="traps" instance=ExtResource("6_jwu2g")]
+
+[node name="saw" parent="traps" instance=ExtResource("6_jwu2g")]
+
+[node name="saw3" parent="traps" instance=ExtResource("6_jwu2g")]
+
+[node name="spikes" parent="traps" instance=ExtResource("7_syist")]
+
+[node name="spikes2" parent="traps" instance=ExtResource("7_syist")]
+
+[node name="spikes3" parent="traps" instance=ExtResource("7_syist")]
+
+[node name="spikes4" parent="traps" instance=ExtResource("7_syist")]
+
+[node name="a" type="TileMapLayer" parent="."]
+physics_interpolation_mode = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD+/wAAAAAGAAAAAAD+/wEAAAAGAAEAAAD+/wIAAAAGAAEAAAD+/wMAAAAGAAEAAAD+/wQAAAAGAAEAAAD//wAAAAAHAAAAAAD//wEAAAAHAAEAAAAAAAAAAAAHAAAAAAAAAAEAAAAHAAEAAAABAAAAAAAHAAAAAAABAAEAAAAHAAEAAAACAAAAAAAHAAAAAAACAAEAAAAHAAEAAAADAAAAAAAIAAAAAAADAAEAAAAIAAEAAAD//wIAAAAHAAEAAAD//wMAAAAHAAEAAAD//wQAAAAHAAEAAAAAAAIAAAAHAAEAAAAAAAMAAAAHAAEAAAAAAAQAAAAPAAAAAAABAAIAAAAHAAEAAAABAAMAAAAHAAEAAAABAAQAAAAHAAEAAAACAAQAAAAJAAEAAAACAAIAAAAHAAEAAAACAAMAAAAHAAEAAAADAAIAAAAIAAEAAAADAAMAAAAIAAEAAAADAAQAAAAHAAAAAAADAAUAAAAMAAEAAAACAAUAAAAHAAEAAAABAAUAAAAHAAEAAAAAAAUAAAAPAAEAAAD//wUAAAAMAAEAAAD+/wUAAAAGAAEAAAD9/wUAAAACAAUAAAD9/wQAAAACAAUAAAD9/wMAAAACAAUAAAD9/wIAAAACAAUAAAD9/wEAAAACAAUAAAD9/wAAAAACAAUAAAD9////AAADAAQAAAD+////AAACAAYAAAD+//7/AAACAAUAAAD+//3/AAACAAUAAAD+//z/AAACAAUAAAD+//v/AAACAAUAAAD+//r/AAACAAUAAAD+//n/AAACAAUAAAD+//j/AAACAAUAAAD+//f/AAACAAUAAAD+//b/AAADAAQAAAD///b/AAABAAYAAAAAAPb/AAABAAYAAAABAPb/AAABAAYAAAACAPb/AAABAAYAAAADAPb/AAABAAYAAAAEAPb/AAABAAYAAAAFAPb/AAABAAYAAAAGAPb/AAABAAYAAAAHAPb/AAABAAYAAAAIAPb/AAABAAYAAAAJAPb/AAABAAYAAAAKAPb/AAABAAYAAAALAPb/AAABAAYAAAAMAPb/AAABAAYAAAANAPb/AAABAAYAAAAOAPb/AAABAAYAAAAPAPb/AAABAAYAAAAQAPb/AAABAAYAAAARAPb/AAABAAYAAAASAPb/AAABAAYAAAATAPb/AAABAAYAAAD///f/AAANAAEAAAD///j/AAANAAIAAAAAAPf/AAAOAAEAAAAAAPj/AAAOAAIAAAAUAPb/AAABAAYAAAAVAPb/AAABAAYAAAAWAPb/AAABAAYAAAAXAPb/AAABAAYAAAAYAPb/AAABAAYAAAAZAPb/AAABAAYAAAAaAPb/AAABAAYAAAAbAPb/AAABAAYAAAAcAPb/AAABAAYAAAAdAPb/AAABAAYAAAAeAPb/AAABAAYAAAAfAPb/AAABAAYAAAAgAPb/AAABAAYAAAAhAPb/AAABAAYAAAAiAPb/AAABAAYAAAAjAPb/AAAEAAAAAAAjAPf/AAAAAAEAAAAjAPj/AAAAAAEAAAAjAPn/AAAAAAEAAAAjAPr/AAAAAAEAAAAjAPv/AAAAAAEAAAAjAPz/AAAAAAEAAAAjAP3/AAAAAAEAAAAjAP7/AAAAAAEAAAAjAP//AAAAAAEAAAAjAAAAAAAAAAEAAAAjAAEAAAAAAAEAAAAjAAIAAAAAAAEAAAAjAAMAAAAAAAEAAAAjAAQAAAAAAAEAAAAjAAUAAAAAAAEAAAAjAAYAAAAAAAEAAAD+/wYAAAABAAAAAAD//wYAAAABAAAAAAAAAAYAAAABAAAAAAABAAYAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAALAAYAAAABAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAASAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAWAAYAAAABAAAAAAAjAAcAAAAEAAEAAAAiAAcAAAABAAAAAAAhAAcAAAABAAAAAAAgAAcAAAABAAAAAAAfAAcAAAABAAAAAAAeAAcAAAABAAAAAAAdAAcAAAABAAAAAAAcAAcAAAABAAAAAAAbAAcAAAABAAAAAAAaAAcAAAABAAAAAAAZAAcAAAABAAAAAAAYAAcAAAABAAAAAAAXAAcAAAADAAEAAAAXAAYAAAACAAAAAAAYAAUAAAAGAAAAAAAZAAUAAAAHAAAAAAAaAAUAAAAHAAAAAAAbAAUAAAAIAAAAAAAYAAYAAAAHAAEAAAAZAAYAAAAHAAEAAAAaAAYAAAAHAAEAAAAbAAYAAAAHAAEAAAAbAAQAAAAGAAAAAAAcAAQAAAAHAAAAAAAdAAQAAAAHAAAAAAAeAAQAAAAHAAAAAAAfAAQAAAAHAAAAAAAeAAUAAAAHAAEAAAAeAAYAAAAHAAEAAAAdAAYAAAAHAAEAAAAdAAUAAAAHAAEAAAAcAAUAAAAHAAEAAAAcAAYAAAAHAAEAAAAfAAUAAAAHAAEAAAAfAAYAAAAHAAEAAAAhAAUAAAANAAEAAAAhAAYAAAANAAIAAAAiAAUAAAAOAAEAAAAiAAYAAAAOAAIAAAAiAAQAAAAMAAEAAAAfAAEAAAAGAAEAAAAfAAIAAAAGAAEAAAAfAAAAAAAGAAEAAAAfAP//AAAGAAEAAAAfAP7/AAAGAAAAAAAgAP7/AAAHAAAAAAAhAP7/AAAHAAAAAAAiAP7/AAAIAAAAAAAiAP//AAAIAAEAAAAiAAAAAAAIAAEAAAAiAAEAAAAIAAEAAAAiAAIAAAAIAAEAAAAiAAMAAAAIAAEAAAAhAP//AAAHAAEAAAAhAAAAAAAHAAEAAAAhAAEAAAAHAAEAAAAhAAIAAAAHAAEAAAAhAAMAAAAHAAEAAAAhAAQAAAAHAAEAAAAgAP//AAAHAAEAAAAgAAAAAAAHAAEAAAAgAAEAAAAHAAEAAAAgAAIAAAAHAAEAAAAgAAMAAAAHAAEAAAAgAAQAAAAKAAEAAAAgAAUAAAAHAAEAAAAgAAYAAAAHAAEAAAAfAAMAAAAGAAEAAAAeAAMAAAAMAAEAAAAiAP3/AAAMAAEAAAD9/wYAAAADAAUAAAAFAAEAAAASAAEAAAAGAAEAAAATAAEAAAAIAP//AAARAAAAAAAJAP//AAASAAAAAAAKAP//AAATAAAAAAAMAAAAAAARAAAAAAANAAAAAAASAAAAAAAOAAAAAAATAAAAAAARAP7/AAARAAAAAAASAP7/AAASAAAAAAATAP7/AAATAAAAAAAXAP7/AAARAAAAAAAYAP7/AAASAAAAAAAZAP7/AAATAAAAAAAcAP//AAARAAEAAAAdAP//AAASAAEAAAAeAP//AAATAAEAAAAGAAUAAAAHAAAAAAAHAAUAAAAHAAAAAAAIAAUAAAAIAAAAAAAEAAQAAAAHAAAAAAAFAAQAAAAHAAAAAAAGAAQAAAAIAAAAAAAEAAUAAAAHAAEAAAAFAAUAAAAJAAEAAAAEAAEAAAARAAEAAAA=")
+tile_set = ExtResource("1_ch1hp")
+
+[node name="jouer" parent="." instance=ExtResource("2_l2ev2")]
+speed = 4.0
+
+[node name="EnergyCells" type="Node2D" parent="."]
+
+[node name="EnergyCell1" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(92, -1)
+
+[node name="EnergyCell2" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(393, -52)
+
+[node name="EnergyCell3" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(295, -53)
+
+[node name="EnergyCell4" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(214, -19)
+
+[node name="EnergyCell5" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(478, -30)
+
+[node name="EnergyCell6" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(142, -31)
+
+[node name="EnergyCell7" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(460, -30)
+
+[node name="EnergyCell8" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(72, -1)
+
+[node name="EnergyCell9" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(0, -53)
+
+[node name="EnergyCell10" parent="EnergyCells" instance=ExtResource("7_x0c84")]
+position = Vector2(161, -31)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("8_8mvax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -58.5
+offset_right = 175.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 3
+
+[node name="PausedLabel" type="Label" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resume" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "RESUME"
+
+[node name="restart" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "RESTART"
+
+[node name="quit" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "QUIT
+"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="EnergyCounter" type="Label" parent="UI" groups=["energy_counter"]]
+offset_right = 42.0
+offset_bottom = 23.0
+text = "0 / 10"
+script = ExtResource("8_s3vsq")
+
+[connection signal="pressed" from="PauseMenu/VBoxContainer/resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/restart" to="PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/quit" to="PauseMenu" method="_on_quit_pressed"]
