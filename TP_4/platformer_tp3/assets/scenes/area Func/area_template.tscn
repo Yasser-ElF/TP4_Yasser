@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bw7ub8k7lmyd7"]
+[gd_scene load_steps=10 format=4 uid="uid://bw7ub8k7lmyd7"]
 
 [ext_resource type="TileSet" uid="uid://dg817vgkjfhd0" path="res://platformer_tp3/assets/sprites/Free/Terrain/terain.tres" id="1_ch1hp"]
 [ext_resource type="PackedScene" uid="uid://bbsurxxwbgpcq" path="res://platformer_tp3/assets/scenes/character_body_2d.tscn" id="2_l2ev2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cw0mylbcshglb" path="res://platformer_tp3/assets/scenes/spikes.tscn" id="7_syist"]
 [ext_resource type="PackedScene" uid="uid://cexra881dd400" path="res://platformer_tp3/assets/scenes/energy_cell.tscn" id="7_x0c84"]
 [ext_resource type="Script" uid="uid://b8uqhtxmig1qg" path="res://platformer_tp3/assets/script/pause_menu.gd" id="8_8mvax"]
+[ext_resource type="FontFile" uid="uid://o66t4b6wi1vo" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="8_c2d0i"]
 [ext_resource type="Script" uid="uid://7o6i42ywuetw" path="res://platformer_tp3/assets/script/energy_counter.gd" id="8_s3vsq"]
 
 [node name="AreaTemplate" type="Node2D"]
@@ -119,6 +120,7 @@ text = "QUIT
 [node name="EnergyCounter" type="Label" parent="UI" groups=["energy_counter"]]
 offset_right = 42.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_c2d0i")
 text = "0 / 10"
 script = ExtResource("8_s3vsq")
 

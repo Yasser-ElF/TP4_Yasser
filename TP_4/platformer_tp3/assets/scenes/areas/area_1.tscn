@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://d1kkhtygapf4o"]
+[gd_scene load_steps=3 format=4 uid="uid://d1kkhtygapf4o"]
 
 [ext_resource type="PackedScene" uid="uid://bw7ub8k7lmyd7" path="res://platformer_tp3/assets/scenes/area Func/area_template.tscn" id="1_avwog"]
 [ext_resource type="Texture2D" uid="uid://bd44qbgfdnsly" path="res://platformer_tp3/assets/sprites/Free/Background/Brown.png" id="2_rx31f"]
-[ext_resource type="FontFile" uid="uid://o66t4b6wi1vo" path="res://platformer_tp3/assets/fonts/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="3_l0fml"]
 
 [node name="Area1" instance=ExtResource("1_avwog")]
 
@@ -52,5 +51,4 @@ offset_right = 0.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_l0fml")
 theme_override_font_sizes/font_size = 40
